@@ -278,7 +278,7 @@ def get_default_traget_layers(model, args):
     # respect to them, will be 0! here use the last 3rd norm layer.
     # means the first norm of the last decoder block.
     if args.vit_like:
-        if args.num_extra_tokens:
+        if args.num_extra_tokens is not None:
             num_extra_tokens = args.num_extra_tokens
         elif hasattr(model.backbone, 'num_extra_tokens'):
             num_extra_tokens = model.backbone.num_extra_tokens
